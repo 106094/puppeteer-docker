@@ -1,0 +1,15 @@
+services:
+  pptr:
+    build: .
+    image: ghcr.io/${GITHUB_REPOSITORY_OWNER:-you}/puppeteer-docker:latest
+    shm_size: 1g
+    user: "${UID:-1000}:${GID:-1000}"   # Linux convenience; ignored on macOS/Windows
+    working_dir: /home/pptruser/app
+    environment:
+      TARGET_URL: "https://www.google.com"
+      OUTPUT_DIR: "/output"
+      OUTPUT_FILE: "image.png"
+      OUTPUT_TEXT: "content.txt"     
+  volumes:
+      - ./output:/output
+

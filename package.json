@@ -1,0 +1,9 @@
+{
+  "name": "puppeteer-docker",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "my_script.mjs",
+  "license": "MIT",
+  "dependencies": {}
+}
+
